@@ -22,6 +22,13 @@ var ball = {
 }
 
 
+gameStatus = ""
+
+function startGame(){
+  gameStatus = "true"
+  document.getElementById("status").innerHTML = "Game Is Starting"
+}
+
 img = "";
 noseX = 0;
 noseY = 0;
@@ -48,7 +55,7 @@ function gotPoses(results){
 
 
 function draw(){
-
+if (gameStatus == "true"){
  background(0); 
 
  fill("black");
@@ -86,6 +93,7 @@ function draw(){
    
    //function move call which in very important
     move();
+}   
 }
 
 
